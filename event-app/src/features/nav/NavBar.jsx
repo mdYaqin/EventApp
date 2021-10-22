@@ -7,7 +7,7 @@ const NavBar = () => {
       <Container>
         <Menu.Item header>
           <img src='/assets/logo.png' alt='logo' style={{ marginRight: 15 }} />
-          Event App
+          Artsy App
         </Menu.Item>
         <Menu.Item name='Events' />
         <Menu.Item>
