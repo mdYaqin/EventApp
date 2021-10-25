@@ -32,13 +32,13 @@ const EventListItem = ({ event, selectEvent, deleteEvent }) => {
       <Segment clearing>
         <div>{event.description}</div>
         <Button
-          onclick={() => deleteEvent(event.id)}
+          onClick={() => deleteEvent(event.id)}
           color='red'
           floated='right'
           content='Delete'
         />
         <Button
-          onclick={() => selectEvent(event)}
+          onClick={() => selectEvent(event)}
           color='teal'
           floated='right'
           content='view'
