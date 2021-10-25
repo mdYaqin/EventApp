@@ -3,8 +3,8 @@ import { Button } from 'semantic-ui-react'
 import { Form, Header, Segment } from 'semantic-ui-react'
 import cuid from 'cuid'
 
-const EventForm = ({ setFormOpen, setEvents, createEvent }) => {
-  const initialValues = {
+const EventForm = ({ setFormOpen, setEvents, createEvent, selectedEvent }) => {
+  const initialValues = selectedEvent ?? {
     title: '',
     category: '',
     description: '',
@@ -21,7 +21,7 @@ const EventForm = ({ setFormOpen, setEvents, createEvent }) => {
       id: cuid(),
       hostedBy: 'Bob',
       attendees: [],
-      hostPhotoURL: '/assets/user.png',
+      hostPhotoURL: '/assets/user.png   ',
     })
     setFormOpen(false)
   }
