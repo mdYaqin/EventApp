@@ -1,4 +1,4 @@
-import { CREATE_EVENT } from './eventConstants'
+import { CREATE_EVENT, DELETE_EVENT, UPDATE_EVENT } from './eventConstants'
 
 export function createEvent(event) {
   return {
@@ -6,15 +6,15 @@ export function createEvent(event) {
     payload: event,
   }
 }
-export function createEvent(event) {
+export function updateEvent(event) {
   return {
-    type: CREATE_EVENT,
+    type: UPDATE_EVENT,
     payload: event,
   }
 }
-export function createEvent(event) {
+export function deleteEvent(eventId) {
   return {
-    type: CREATE_EVENT,
-    payload: event,
+    type: DELETE_EVENT,
+    payload: eventId,
   }
 }
