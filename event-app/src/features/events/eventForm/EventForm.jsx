@@ -8,6 +8,10 @@ import { createEvent, updateEvent } from '../eventActions'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import MyTextInput from '../../../app/common/form/MyTextInput'
+import MyTextArea from '../../../app/common/form/MyTextArea'
+import MySelectInput from '../../../app/common/form/MySelectInput'
+import { categoryData } from '../../../app/api/categoryOptions'
+import MyDateInput from '../../../app/common/form/MyDateInput'
 
 const EventForm = ({ match, history }) => {
   const dispatch = useDispatch()
@@ -56,12 +60,23 @@ const EventForm = ({ match, history }) => {
         <Form className='ui form'>
           <Header sub color='teal' content='Event Details' />
           <MyTextInput name='title' placeholder='Event title' />
-          <MyTextInput name='category' placeholder='Event category' />
-          <MyTextInput name='description' placeholder='Description' />
+          <MySelectInput
+            name='category'
+            placeholder='Event category'
+            options={categoryData}
+          />
+          <MyTextArea name='description' placeholder='Description' rows={3} />
           <Header sub color='teal' content='Event Location Details' />
           <MyTextInput name='city' placeholder='City' />
           <MyTextInput name='venue' placeholder='Venue' />
-          <MyTextInput name='date' placeholder='Event date' type='date' />
+          <MyDateInput
+            name='date'
+            placeholderText='Event date'
+            timeFormat='HH:mm'
+            showTimeSelect
+            timeCaption='time'
+            dateFormat='MMMM d, yyyy h:mm a'
+          />
 
           <Button type='submit' floated='right' positive content='Submit' />
           <Button
